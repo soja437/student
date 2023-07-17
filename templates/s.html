@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+body{
+    background-color: salmon;
+    }  
+.wrap{
+    width: 600px;
+    margin: auto;
+    margin-top: 100px;
+}
+.card{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
+    transition: 0.4s;
+    width: 300px;
+    background: #fff;
+    text-align: center;
+
+}
+</style>
+</head>
+
+
+<body>
+    <form action="">
+    <h1>student details</h1>
+    <div class="wrap">
+       <div class="card" style="width: 100%;">
+        <div class="container">
+            <table border="2px">
+                <thead>
+                    <tr>
+                        <th>STUDENT NAME</th>
+                        <th>STUDENT NAME</th>
+                        <th>STUDENT NAME</th>
+                        <th>STUDENT NAME</th>
+                        <th>STUDENT EMAIL</th>
+                        <th>STUDENT MOBILE NUMBER</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for s in student %}
+                    <tr>
+                        <td>{{s.id}}</td>
+                        <td><a href="{% url 'studname' s.id %}">{{s.student_name}}</a><br></td>
+                        <td>{{s.student_name}}</td>
+                        <td>{{s.student_address}}</td>
+                        <td>{{s.student_age}}</td>
+                        <td>{{s.student_email}}</td>
+                        <td>{{s.joining_date}}</td>
+                        <td>{{s.qualification}}</td>
+                        <td>{{s.gender}}</td>
+                        <td>{{s.mobileno}}</td>
+        
+                       
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                </table>
+        </div>
+       </div>
+    </div>
+</form>
+</body>
+</html>

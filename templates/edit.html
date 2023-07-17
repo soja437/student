@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+body{
+    /* background-color: gray; */
+    background-image: url(https://media.istockphoto.com/id/1355044142/vector/illustration-of-a-student-doing-programming-learning.jpg?s=612x612&w=0&k=20&c=3R34ufzHqdoU5zW6qZVUB9joeY0B4YadrZsXq25iSJs=) ;
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    
+}
+form{
+    text-align: center;
+}
+</style>
+<body>
+   <form action="{% url 'edit_student_details' student.id %}" method="post">
+    {% csrf_token %}
+    
+    <h1>Student Registration</h1>
+    <label>Name</label>
+    <input type="text" name="student_name" value="{{student.student_name}}"><br><br>
+    <label>Address</label>
+    <input type="text" name="student_address" value="{{student.student_address}}"><br><br>
+    <label>Age</label>
+    <input type="number" name="student_age" value="{{student.student_age}}"><br><br>
+    <label>Email</label>
+    <input type="email" name="student_email" value="{{student.student_email}}"><br><br>
+    <label>Joining Date</label>
+    <input type="date" name="joining_date" value="{{student.joining_date|date:'Y-m-d'}}"><br><br>
+    <label>Qualification</label>
+    <select name="qualification" value="{{student.qualification}}">
+      {% for i in q %}
+        {% if i in Qualification == student.qualification %}
+         <option value="{{i.qualification}}" selected>{{i.qualification}}</option>
+        {% else %}
+
+        <option value="{{i.qualification}}" >{{i.qualification}}</option>  
+        {% endif %}
+       {% endfor %}        
+        <option value="mca">mca</option>
+        <option value="msc">msc</option>
+        <option value="btech">btech</option>
+        <option value="diploma">diploma</option>
+        <option value="bsc">bsc</option>
+    </select><br><br>
+    <label>Gender</label>
+    <label>Female</label>
+    <input type="radio" name="gender" value="male" {% if student.gender == 'male' %} checked{% endif  %}>
+    <label>Male</label>
+    <input type="radio" name="gender" value="female" {% if student.gender == 'female' %} checked{% endif %}><br>
+    
+    <label>Mobile Number</label>
+    <input type="text" name="mobileno" value="{{student.mobileno}}"><br><br>
+    <button type="submit">SUBMIT</button><br><br>
+    
+   </form>
+
+</body>
+</html>

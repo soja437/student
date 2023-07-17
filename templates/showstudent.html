@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+h1{
+    text-align: center;
+}
+body{
+    /* background-color: gray; */
+    background-image: url(https://img.freepik.com/free-photo/blue-surface-with-study-tools_23-2147864592.jpg);
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    
+    
+}  
+</style>
+<body><br><br>
+    <h1>Show Student Details</h1><br>
+    
+    <table border="2px" align="center">
+        <thead>
+            <tr>
+                <th>STUDENT NAME</th>
+                <th>STUDENT EMAIL</th>
+                <th>STUDENT MOBILE NUMBER</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for s in students %}
+            <tr>
+               
+                <td><a href="{% url 'studname' s.id %}">{{s.student_name}}</a><br></td>
+                <td>{{s.student_email}}</td>
+                <td>{{s.mobileno}}</td>
+                <td><a href="{% url 'editpage' s.id %}">Edit</a></td>
+                <td><a href="{% url 'deletepage' s.id %}">Delete</a></td>
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

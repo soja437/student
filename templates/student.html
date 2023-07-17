@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>Document</title> 
+    <style>
+    body{
+    /* background-color: gray; */
+    background-image: url(https://www.hkcgi.org.hk/images/Student_registration_banner.jpg) ;
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    
+}
+form{
+    text-align: center;
+}
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <form action="{% url 'add_studdetails' %}" method="post"><br>
+    
+    {% csrf_token %}
+    <h3>Student Registration</h3><br>
+    <label>Name</label>
+    <input type="text" name="student_name"><br><br>
+    <label>Address</label>
+    <input type="text" name="student_address" col="100"><br><br>
+    <label>Age</label>
+    <input type="number" name="student_age"><br><br>
+    <label>Email</label>
+    <input type="email" name="student_email"><br><br>
+    <label>Joining Date</label>
+    <input type="date" name="joining_date"><br><br>
+    <label>Qualification</label>
+    <select name="qualification">
+        <option value="mca">mca</option>
+        <option value="msc">msc</option>
+        <option value="btech">btech</option>
+        <option value="diploma">diploma</option>
+        <option value="bsc">bsc</option>
+    </select><br><br>
+    <label>Gender</label>
+    <label>Female</label>
+    <input type="radio" name="gender" value="female">
+    <label>Male</label>
+    <input type="radio" name="gender" value="male" ><br>
+    
+    <label>Mobile Number</label>
+    <input type="text" name="mobileno"><br><br>
+    <button type="submit">SUBMIT</button><br><br>
+    
+   </form>
+
+</body>
+</html>

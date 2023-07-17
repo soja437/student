@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+body{
+    /* background-color: gray; */
+    background-image: url(https://img.freepik.com/free-photo/back-school-concept-with-copy-space_23-2148559725.jpg) ;
+    background-repeat: no-repeat;
+    background-size: 99vw 99vh;
+    
+}
+.card{
+  /* other base style */
+  position: absolute;
+  top: 30%;
+  left: 40%;
+  text-align: center;
+}
+tr,p,label{
+    text-align: center;
+}
+</style>
+</head>
+<body>
+</body>
+
+    <form action="">
+
+    <div class="card" style="width: 20rem;">
+        
+        <div class="card-body" style="background-color:yellow">
+            <table>
+                <tr><td><h2 class="card-title">{{students.student_name}}</h2></td></tr>
+                <tr><p class="card-text"><td><label>Age</label></td><td>{{students.student_age}}</td></p></tr>
+                <tr><p class="card-text"><td><label>Address</label></td><td>{{students.student_address}}</td></p></tr>
+                <tr><p class="card-text"><td><label>Email</label></td><td>{{students.student_email}}</td></p></tr>
+                <tr><p class="card-text"><td><label>Joining Date</label></td><td>{{students.joining_date}}</td></p></tr>
+                <tr><p class="card-text"><td><label>Qualification</label></td><td>{{students.qualification}}</td></p></tr>
+                <tr><p class="card-text"><td><label>Gender</label></td><td>{{students.gender}}</td></p></tr>
+                <tr><p class="card-text"><td><label>Mobile Number</label></td><td>{{students.mobileno}}</td></p></tr>
+
+            </table>
+        </div>
+    </div>
+</form>
+</body>
+</html>
